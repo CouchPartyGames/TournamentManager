@@ -8,8 +8,12 @@ namespace CouchParty.TournamentManager.Hubs {
 
         ILogger<TournamentHub> logger;
 
+        public static TournamentHub Instance { get; private set; }
+
+
         public TournamentHub(ILogger<TournamentHub> logger) {
             this.logger = logger;
+            Instance = this;
         }
 
         public async override Task OnConnectedAsync() {

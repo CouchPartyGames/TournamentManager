@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 
 namespace CouchParty.TournamentManager.Hubs {
 
@@ -19,6 +18,11 @@ namespace CouchParty.TournamentManager.Hubs {
         // Tell Clients a New Opponent has Left
         async Task OpponentLeft(string name) {
             await Clients.All.OpponentLeft(name);
+        }
+
+        // Tell Clients a New Opponent has Left
+        public async Task OpponentChat(string msg) {
+            await Clients.All.OpponentChat(msg);
         }
 
         // <summary>
