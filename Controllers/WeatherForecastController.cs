@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using CouchParty.TournamentManager.Hubs;
 
 namespace CouchParty.TournamentManager.Controllers {
 
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
-    {
+    public class WeatherForecastController : ControllerBase {
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -14,7 +13,7 @@ namespace CouchParty.TournamentManager.Controllers {
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        IHubContext<TournamentHub, ITournamentHub> _hub;
+        private readonly IHubContext<TournamentHub, ITournamentHub> _hub;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger, IHubContext<TournamentHub, ITournamentHub> context)
         {
